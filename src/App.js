@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import Header from './Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Ideeapprouve from './Ideeapprouve'
+import Listeidee from './Listeidee'
+import Addidee from './Addidee'
+
+function App(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+          
+          
+            <Routes>
+              <Route path="/add" element={<Addidee />} /> 
+            </Routes>
+
+            <Routes>
+              <Route path="/approuve" element={<Ideeapprouve />} /> 
+            </Routes>
+
+            <Routes>
+              <Route path="/liste" element={<Listeidee />} /> 
+            </Routes>
+
+      </Router> 
     </div>
   );
 }
