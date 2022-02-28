@@ -9,7 +9,7 @@ function Listeidee() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect( ()=> {
-        fetch('https://exemple-api.herokuapp.com/api/apprenants')
+        fetch('https://api-boite-idee.herokuapp.com/api/idee')
             .then( res => res.json())
             .then( data => {
                 setSuggestions(data);

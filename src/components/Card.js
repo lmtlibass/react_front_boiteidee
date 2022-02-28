@@ -4,17 +4,22 @@ export default function SuggestionCard({suggestion}){
     const approved = () => {
         console.log("approuved!");
     }
-    const refused = () => {
-        console.log("refused!");
+    const refused = (id) => {
+        fetch('https://api-boite-idee.herokuapp.com/api/idee')
+        .then(res => res.json())
+        .then(data => {
+            data[id].statut = true
+            
+        })
     }
     return (
         <div>
             <Card style={{ width: '18rem' }}>
             <Card.Body>
-                <Card.Title>{suggestion.prenom} {suggestion.nom}</Card.Title>
-                <Card.Text>{suggestion.email}</Card.Text>
+                <Card.Title>{suggestion.titre} {suggestion.nom}</Card.Title>
+                <Card.Text>{suggestion.description}</Card.Text>
                 <Card.Link href="#" onClick={approved}>approuvée</Card.Link>
-                <Card.Link href="#" onClick={refused}>refusée</Card.Link>
+                <Card.Link href="#" onClick={()=>refused(suggestion.id)}>refusée</Card.Link>
             </Card.Body>
             </Card>
         </div>
