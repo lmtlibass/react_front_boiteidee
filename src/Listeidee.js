@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import SuggestionCard from './components/Card.js';
-import {Stack } from 'react-bootstrap';
+
 
 
 
@@ -10,7 +10,7 @@ function Listeidee() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect( ()=> {
-        fetch('https://exemple-api.herokuapp.com/api/apprenants')
+        fetch('http://127.0.0.1:8000/api/listeidee/')
             .then( res => res.json())
             .then( data => {
                 setSuggestions(data);
@@ -18,12 +18,13 @@ function Listeidee() {
             })
     });
     return (
-        <Stack direction="horizontal" gap={3} className="p-5">{
+        <div   className="d-flex justify-content-beween align-item-center flex-wrap mt-5 ms-5">{
             isLoaded && suggestions.map(suggestion => 
                     <SuggestionCard suggestion={suggestion}/>
             )
-        }</Stack>
+        }</div>
     );
+  
 
 }
 export default Listeidee
