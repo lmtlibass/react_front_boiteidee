@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import SuggestionCard from './components/Card.js';
-import {Stack } from 'react-bootstrap';
+import SuggestionCard from '../components/Card.js';
+import { Stack } from 'react-bootstrap';
 
 
 
 function Listeidee() {
-
     const [suggestions, setSuggestions] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -19,8 +18,8 @@ function Listeidee() {
     });
     return (
         <Stack direction="horizontal" gap={3} className="p-5">{
-            isLoaded && suggestions.map(suggestion => 
-                    <SuggestionCard suggestion={suggestion}/>
+            isLoaded && suggestions.map(
+                suggestion => <SuggestionCard suggestion={suggestion}/>
             )
         }</Stack>
     );

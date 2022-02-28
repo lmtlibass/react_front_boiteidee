@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Boite Idée",
+  "name": "Boite à idée, les suggestions",
   "icons": [
     {
       "src": "favicon.ico",
