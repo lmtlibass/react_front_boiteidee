@@ -28,7 +28,11 @@ function Addidee(){
                 <h1 className='mb-5 mt-3'>ajouter votre idée</h1>
                 <input type="text" value={titre} onChange={(e)=>setTitre(e.target.value)} className="form-control mb-4" placeholder='sur quoi porte votre idée'  />
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Control as="textarea" value={description} onChange={(e)=>setDescription(e.target.value)} rows={5} placeholder='expliquez en détail votre idée ici' />
+                <Form.Control as="textarea" 
+                    value={description} 
+                    onChange={ (e) => setDescription(e.target.value)} 
+                    rows={5} 
+                    placeholder='expliquez en détail votre idée ici'/>
                 </Form.Group>
             </form>
             <Button onClick={add}>Envoyer</Button>

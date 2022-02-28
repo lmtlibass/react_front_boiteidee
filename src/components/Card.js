@@ -1,15 +1,20 @@
+import { useState } from 'react';
 import { Card } from 'react-bootstrap';
 
 export default function SuggestionCard({suggestion}){
+
+    const [etat, setEtat ] = useState(false);
+    
     const approved = () => {
-        console.log("approuved!");
+        setEtat(true);
     }
     const refused = () => {
-        console.log("refused!");
+        setEtat(false);
+
     }
     return (
         <div>
-            <Card style={{ width: '18rem' }}>
+            <Card border={etat ? "success" : "danger"} style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Title>{suggestion.prenom} {suggestion.nom}</Card.Title>
                 <Card.Text>{suggestion.email}</Card.Text>
