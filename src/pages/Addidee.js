@@ -11,7 +11,7 @@ function Addidee(){
         let idees = {titre, description}; 
         console.log(idees);
 
-        let result = await fetch("http://127.0.0.1:8000/api/addidee", {
+        let result = await fetch("https://api-boite-idee.herokuapp.com/api/idee", {
             method: 'POST',
             body:JSON.stringify(idees),
             headers:{
